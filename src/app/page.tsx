@@ -9,6 +9,7 @@ const CenteredHeading = styled.h1`
   align-items: center;
 `;
 
+// TODO: finish moving away from css styling, add proper Layout components, consider using tailwind for styling, add theme provider, etc.
 export default function Home() {
   return (
     <div className={styles.page}>
