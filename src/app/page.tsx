@@ -42,7 +42,8 @@ export default function Home() {
           <BarChartComponent
             chartData={formattedChartData}
             title="Current Cryptocurrency Prices"
-            yAxisLabel="Price (USD)"
+            yAxisLabel="Price"
+            formatYAxisAsUSD={true}
           />
         </div>
       </main>
