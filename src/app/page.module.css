@@ -1,3 +1,9 @@
+/*
+TODO: CSS should be completely re-written to be more maintainable and scalable.
+When appropriate, the styling should be moved to containers.
+Current CSS is ad-hoc and only appropriate for a single chart on a single page.
+*/
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -10,10 +16,10 @@
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
+  padding: 40px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,6 +38,12 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  max-height: calc(
+    100vh - 80px - 32px
+  ); /* TODO: fix, this is not good practice. */
 }
 
 .main ol {
@@ -68,10 +80,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -159,6 +168,22 @@ a.secondary {
     align-items: center;
     justify-content: center;
   }
+}
+
+.chartContainer {
+  width: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+  min-height: 350px;
+  min-width: 300px;
+}
+
+.chartContainer > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {
