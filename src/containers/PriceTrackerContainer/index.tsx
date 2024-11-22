@@ -42,9 +42,9 @@ export default function PriceTrackerContainer() {
 
   function formatChartData(allPriceData: IFetchAllPricesResponse) {
     const cryptoCurrencyList = allPriceData.cryptocurrencys;
-    return cryptoCurrencyList.map((crytpocurrency) => [
-      crytpocurrency.name,
-      crytpocurrency.price,
+    return cryptoCurrencyList.map((cryptocurrency) => [
+      cryptocurrency.name,
+      cryptocurrency.price,
     ]);
   }
 
