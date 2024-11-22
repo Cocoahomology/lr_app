@@ -27,6 +27,7 @@ const BarChartComponent: React.FC<IBarChartProps> = ({
   hideLegend = false,
   height = "400px",
   yAxisLabel = "",
+  formatYAxisAsUSD = false,
 }) => {
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -61,6 +62,11 @@ const BarChartComponent: React.FC<IBarChartProps> = ({
         yAxis: {
           type: "value",
           name: yAxisLabel,
+          axisLabel: {
+            formatter: formatYAxisAsUSD
+              ? (value: number) => `$${value.toFixed(2)}`
+              : undefined,
+          },
         },
         series: [
           {

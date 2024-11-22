@@ -7,4 +7,5 @@ export interface IBarChartProps {
   height?: string;
   barWidths?: number;
   yAxisLabel?: string;
+  formatYAxisAsUSD?: boolean;
 }
