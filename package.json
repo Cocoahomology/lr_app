@@ -10,6 +10,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@testing-library/react": "^16.0.1",
     "echarts": "^5.5.1",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.2",
