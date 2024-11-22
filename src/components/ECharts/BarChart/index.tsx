@@ -55,6 +55,7 @@ const BarChartComponent: React.FC<IBarChartProps> = ({
         legend: {
           show: !hideLegend,
         },
+        // TODO: Consider adding dynamic font size for xAxis axisLabel.
         xAxis: {
           type: "category",
           data: chartData.map((item) => item[0]),
