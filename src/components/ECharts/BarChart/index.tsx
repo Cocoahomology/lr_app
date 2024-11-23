@@ -96,7 +96,16 @@ const BarChartComponent: React.FC<IBarChartProps> = ({
         window.removeEventListener("resize", handleResize);
       };
     }
-  }, [chartData, title, color, hideLegend, yAxisLabel]);
+  }, [
+    chartData,
+    title,
+    color,
+    style,
+    hideLegend,
+    height,
+    yAxisLabel,
+    formatYAxisAsUSD,
+  ]);
 
   return <div ref={chartRef} style={{ width: "100%", height, ...style }} />;
 };
